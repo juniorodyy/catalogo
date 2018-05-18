@@ -15,7 +15,11 @@
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
-  <div class="field">
+   <div class="field">
+    <%= f.label :Genero %><br>
+    <%= f.select :Genero, [["Ação",1], ["Drama",2],["Terror",3],["Comédia",4],["Romance",5],["Suspense",6]] %>
+  </div>
+<div class="field">
     <%= f.label :group_id %><br>
     <%= f.select :group_id, Group.all.collect { |group| [group.name, group.id] } %>
   </div>

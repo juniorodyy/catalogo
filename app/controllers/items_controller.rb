@@ -5,11 +5,13 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @generos = [["Ação",1], ["Drama",2],["Terror",3],["Comédia",4],["Romance",5],["Suspense",6]]
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
+      @generos = [["Ação",1], ["Drama",2],["Terror",3],["Comédia",4],["Romance",5],["Suspense",6]]
   end
 
   # GET /items/new
@@ -19,6 +21,7 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+
   end
 
   # POST /items
@@ -69,6 +72,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:description, :group_id)
+      params.require(:item).permit(:description, :group_id, :Genero)
     end
 end

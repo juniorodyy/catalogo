@@ -10,5 +10,10 @@
   <%= @item.group.name %>
 </p>
 
+<p>
+  <strong>Genero:</strong>
+  <%= @item.Genero && @generos.select{|a|a[1] == @item.Genero}.first[0] %>
+</p>
+
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
